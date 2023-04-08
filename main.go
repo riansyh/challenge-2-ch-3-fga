@@ -9,7 +9,7 @@ import (
 func main() {
 	database.StartDB()
 	r := router.StartApp()
-	var PORT = os.Getenv("PORT")
+	var PORT = os.Getenv("PGPORT")
 	// r.Run(":8081")
 	r.Run(":" + PORT)
 
