@@ -4,17 +4,29 @@ import (
 	"challenge-2/models"
 	"fmt"
 	"log"
+	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
+// var (
+//
+//	host     = "localhost"
+//	user     = "postgres"
+//	password = "890990"
+//	dbPort   = "5432"
+//	dbName   = "challenge-2-3"
+//	db       *gorm.DB
+//	err      error
+//
+// )
 var (
-	host     = "localhost"
-	user     = "postgres"
-	password = "890990"
-	dbPort   = "5432"
-	dbName   = "challenge-2-3"
+	host     = os.Getenv("PGHOST")
+	user     = os.Getenv("PGHUSER")
+	password = os.Getenv("PGPASSWORD")
+	dbPort   = os.Getenv("PGPORT")
+	dbName   = os.Getenv("PGDATABASE")
 	db       *gorm.DB
 	err      error
 )
